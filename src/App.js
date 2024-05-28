@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './styles/App.scss';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import { useDispatch } from 'react-redux';
 import Home from './components/pages/Home/Home';
@@ -22,20 +22,12 @@ function App() {
     <Router>
       <Menu />
 
-      <Switch>
-        <Route path="/cart" exact>
-          <Cart />
-        </Route>
-        <Route path="/checkout" exact>
-          <Checkout />
-        </Route>
-        <Route path="/success" exact>
-          <Success />
-        </Route>
-        <Route path="/" exact>
-          <Home />
-        </Route>
-      </Switch>
+      <Routes>
+        <Route path="/cart" element={<Cart />}></Route>
+        <Route path="/checkout" element={<Checkout />}></Route>
+        <Route path="/success" element={<Success />}></Route>
+        <Route path="/" element={<Home />}></Route>
+      </Routes>
     </Router>
   );
 }

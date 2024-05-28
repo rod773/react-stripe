@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation, Redirect } from 'react-router-dom';
+import { useLocation, Navigate } from 'react-router-dom';
 
 function useQuery() {
   return new URLSearchParams(useLocation().search);
@@ -28,7 +28,7 @@ const Success = () => {
           </div>
         </div>
       ) : (
-        <Redirect
+        <Navigate
           to={{
             pathname: '/'
           }}

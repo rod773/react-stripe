@@ -6,7 +6,7 @@ import {
   CardNumberElement
 } from '@stripe/react-stripe-js';
 import { useSelector, useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import {useNavigate } from 'react-router-dom';
 import { validate } from '../../../helpers/validation';
 import Axios from '../../../axios';
 import CardSection from '../../molecules/CardSection/CardSection';
@@ -29,7 +29,7 @@ const Billing = () => {
   const cart = useSelector((state) => state.cart);
   const [error, setError] = useState('');
   const dispatch = useDispatch();
-  const history = useHistory();
+  const navigate =useNavigate();
 
   const getBillingDetails = (values) => {
     return {
@@ -67,7 +67,7 @@ const Billing = () => {
     const { amount, id } = paymentIntent;
 
     // Redirect to success page
-    history.push(`/success?amount=${amount}&id=${id}`, {
+    navigate(`/success?amount=${amount}&id=${id}`, {
       from: 'checkout'
     });
   };
