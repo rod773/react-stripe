@@ -8,7 +8,7 @@ import {
 import { useSelector, useDispatch } from 'react-redux';
 import {useNavigate } from 'react-router-dom';
 import { validate } from '../../../helpers/validation';
-import Axios from 'axios';
+import Axios from '../../../axios';
 import CardSection from '../../molecules/CardSection/CardSection';
 import style from './Billing.module.scss';
 import { clearCart } from '../../../store/actions/cartActions';

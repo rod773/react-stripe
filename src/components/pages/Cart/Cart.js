@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import CartProduct from '../../molecules/CartProduct/CartProduct';
 import style from './Cart.module.scss';
 import CartButton from '../../atoms/CartButton/CartButton';
@@ -34,9 +34,9 @@ const Cart = () => {
 
             <div className={style.totals}>
               <div>Total: S$ {cart.total}</div>
-              <NavLink to="/checkout" exact className="button">
+              <Link to="/checkout"  className="button">
                 Checkout
-              </NavLink>
+              </Link>
             </div>
           </div>
         </>
